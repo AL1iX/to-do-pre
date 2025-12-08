@@ -27,7 +27,7 @@ function getTasksFromDOM() {
   const itemsNamesElements = document.querySelectorAll(".to-do__item-text")
   const tasks = []
 
-  itemsNamesElements.forEach((element) => {
+  itemsNamesElements.forEach(function(element) {
     tasks.push(element.textContent)
   })
 
@@ -90,7 +90,7 @@ function handleFormSubmit(evt) {
 
 items = loadTasks()
 
-items.forEach((item) => {
+items.forEach(function(item) {
   const itemElement = createItem(item)
   listElement.append(itemElement)
 })
