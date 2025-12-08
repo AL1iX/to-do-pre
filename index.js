@@ -44,13 +44,13 @@ function createItem(item) {
 
   textElement.textContent = item
 
-  deleteButton.addEventListener("click", () => {
+  deleteButton.addEventListener("click", function() {
     clone.remove()
     items = getTasksFromDOM()
     saveTasks(items)
   })
 
-  duplicateButton.addEventListener("click", () => {
+  duplicateButton.addEventListener("click", function() {
     const itemName = textElement.textContent
     const newItem = createItem(itemName)
     listElement.prepend(newItem)
@@ -58,12 +58,12 @@ function createItem(item) {
     saveTasks(items)
   })
 
-  editButton.addEventListener("click", () => {
+  editButton.addEventListener("click", function() {
     textElement.contentEditable = true
     textElement.focus()
   })
 
-  textElement.addEventListener("blur", () => {
+  textElement.addEventListener("blur", function() {
     textElement.contentEditable = false
     items = getTasksFromDOM()
     saveTasks(items)
